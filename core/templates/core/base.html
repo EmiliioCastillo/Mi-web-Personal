@@ -15,7 +15,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static 'core/css/clean-blog.min.css' %}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
@@ -48,15 +48,15 @@
     </nav>
 
     <!-- Cabecera -->
-    <header class="masthead" style="background-image: url('img/home.jpg')">
+    <header class="masthead" style="background-image:url('{% block background %}{%endblock%}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               {% block headers %}{% endblock %}
-              <h1>Estudiante</h1>
-              <span class="subheading">Programador Back-End</span>
+              <h1>Programador y Desarrollador web</h1>
+              <span class="subheading">big data, Data science y desarrollo web.</span>
             </div>
           </div>
         </div>
@@ -78,28 +78,34 @@
          <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
               <li class="list-inline-item">
-                <a href="#">
+             {% if LINK_GMAIL %}
+                <a href="{{LINK_GMAIL}}">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
+              {%endif%}
               </li>
               <li class="list-inline-item">
-                <a href="#">
+              {% if LINK_GITHUB %}
+                <a href="{{LINK_GITHUB}}">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
+              {%endif%}
               </li>
               <li class="list-inline-item">
-                <a href="#">
+              {% if LINK_LINKEDIN %}
+                <a href="{{LINK_LINKEDIN}}">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
+              {%endif%}
               </li>
             </ul>
             <p class="copyright text-muted">Copyright &copy; 2018 · Emilio Castillo (Programador) </p>
@@ -112,6 +118,7 @@
     <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'core/js/clean-blog.min.js' %}"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
   </body>
 
